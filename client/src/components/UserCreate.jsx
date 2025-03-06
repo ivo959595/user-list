@@ -1,9 +1,11 @@
 import React from "react";
 
-export default function UserCreate() {
+export default function UserCreate({
+    onClose,
+}) {
   return (
     <div className="overlay">
-      <div className="backdrop"></div>
+      <div className="backdrop" onClick={onClose} ></div>
       <div className="modal">
         <div className="user-container">
           <header className="headers">
@@ -18,6 +20,7 @@ export default function UserCreate() {
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 320 512"
+                onClick={onClose}
               >
                 <path
                   fill="currentColor"
@@ -121,7 +124,7 @@ export default function UserCreate() {
               </div>
             </div>
             <div id="form-actions">
-              <button id="action-cancel" className="btn" type="button">
+              <button id="action-cancel" className="btn" type="button" onClick={onClose}>
                 Cancel
               </button>
             </div>

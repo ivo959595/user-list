@@ -19,11 +19,17 @@ export default function UserList() {
       })
   }, []);
 
-  const addUserClickHandler = () => {
+  const createUserClickHandler = () => {
     setShowCreate(true);
     console.log("Show Create:", showCreate); // Debugging
   };
   
+
+  const closeCreateUserClickHandler = () => {
+    setShowCreate(false)
+  }
+
+
 
   return (
     <>
@@ -31,7 +37,7 @@ export default function UserList() {
     
         <Search />
 
-      {showCreate && <UserCreate/>}
+      {showCreate && <UserCreate onClose={closeCreateUserClickHandler}/>}
 
 
         {/* Table component */}
@@ -65,7 +71,7 @@ export default function UserList() {
         {/* New user button */}
         <button 
         className="btn-add btn"
-        onClick={addUserClickHandler}>
+        onClick={createUserClickHandler}>
           Add new user
         </button>
 
