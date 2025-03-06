@@ -40,7 +40,13 @@ export default function UserList() {
 
             <tbody>
               {/* Table row component */}
-              <UserListItem />
+
+              {users.map(user =>  <UserListItem 
+                  key={user._id} 
+                  {...user}
+                  />)}
+
+             
             </tbody>
           </table>
         </div>
